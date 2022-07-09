@@ -1,0 +1,149 @@
+body{
+    margin:0;
+    padding: 0;
+}
+
+.container-1{
+    display: grid;
+    /* grid-template-columns:  auto 300px;
+    grid-template-rows: 100px 20px 200px;
+     */
+    grid-template: 100px 20px 200px / auto 300px;      /* row / column*/
+    gap: 3px;
+    padding-bottom: 20px;
+}
+
+.individual-grid{
+    background-color: aqua;
+}
+
+.container-2{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(3,50px);
+    gap: 10px;
+    padding-bottom: 50px;
+}
+
+.header{
+    /*
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-column: 1 / 3; */
+    grid-column: 1 / -2;
+}
+
+.menu{
+    grid-column: -2 / -1;
+    grid-row: 1 / 4;
+}
+
+.content{
+    grid-column: 1 / -2;
+}
+
+.footer{
+    /* grid-column: 1 / span 2; */
+    grid-column: 1 / -2;
+}
+
+.container-3{
+    display: grid;
+    grid-template-areas: 
+    "m h h h h h h h h h h h"
+    "m c c c c c c c c c c c"
+    "m f f f f f f f f f f f";
+    gap:10px;
+    padding-bottom: 50px;
+}
+
+.header1{
+    grid-area: h ;
+}
+
+.menu1{
+    grid-area: m;
+    background-color: orange;
+}
+
+.content1{
+    grid-area:c;
+}
+
+.footer1{
+    grid-area: f;
+}
+
+.container-4{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    grid-auto-rows: 100px;
+    padding-bottom: 50px;
+    gap:5px;    
+}
+
+.photo-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+    grid-auto-rows: 100px;
+    gap:5px;
+    grid-auto-flow: dense;
+}
+
+.card{
+    color:yellow;
+}
+
+.big-card{
+    grid-row: span 2;
+    grid-column: span 2;    
+}
+
+.tall-card{
+    grid-row: span 2;
+}
+
+.wide-card{
+    grid-column: span 2;
+}
+
+.container-5{
+    display: grid;
+    grid-template-columns: [main-col-start] 1fr 5fr [main-col-end];
+    grid-template-rows: 40px 70px 40px;
+    padding-bottom: 50px;
+    gap:5px;    
+}
+
+.header5{
+    grid-column: main-col;
+}
+
+.footer5{
+    grid-column: main-col;
+}
+
+.container-6{
+    border: 5px solid orange;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(3,80px);
+    grid-template-rows: repeat(3,80px);
+    padding-bottom: 50px;
+    gap:1px;    
+    justify-content: center;     /*here the space between includes the gap number of pixels as well*/
+    align-content: center;
+}
+
+.individual-grid-6-1{
+    justify-self: center;
+    align-self: center;
+    background-color: aqua; 
+}
+
+.container-7{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
+    padding-bottom: 50px;
+    /* gap:5px;     */
+}
